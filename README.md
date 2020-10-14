@@ -12,7 +12,10 @@ Assuming you've cloned this repo to your machine, the following steps will get y
 
 ```bash
 cd ./alpha-blog
+docker build -t snykcon-blog:v0 .
 
+# once the above build starts it's OK to run this build concurrently
+docker build -t snykcon-blog:vFix . -f Dockerfile.rubyfixes
 ```
 
 
@@ -28,14 +31,11 @@ This is shown from the Snyk UI. To see Snyk's ability to detect code inside a co
 
 ### Picking a decent base image to start FROM
 
-> Setup:
-
-```bash
-cd ./alpha-blog
-
-```
-
 CLI:
 1. 
+
+
+
+
 
 1. This is shown from the Snyk UI. To see this you simply need to setup Snyk integration with a compatible SCM system (GitHub, Bitbucket, GitLab, Azure repos...) and import a repo with a Dockerfile in it.
